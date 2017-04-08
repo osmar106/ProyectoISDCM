@@ -13,6 +13,42 @@ http://www.c-sharpcorner.com/UploadFile/fd0172/how-to-fetch-records-from-databas
 
 
 
+
+
+
+INSERT INTO VIDEOS (TITULO, AUTOR, FECHA_CREACION, DURACION, REPRODUCCIONES, DESCRIPCION, FORMATO) VALUES('Video','Video',DATE('2009-01-01'),TIME('05:54:38'),INT('1'),'Video','mov')
+
+
+
+
+
+
+
+
+CREATE TABLE "VIDEOS"
+
+(    
+   "ID" INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),   
+   "TITULO" VARCHAR(100),     
+   "AUTOR" VARCHAR(100),
+   "FECHA_CREACION" DATE,
+   "DURACION" TIME,
+   "REPRODUCCIONES" INTEGER,
+   "DESCRIPCION" VARCHAR(255),
+   "FORMATO" VARCHAR(5)
+);
+
+
+
+
+
+
+
+
+
+
 ---->>> Funciona <<<-----
 
 <%
