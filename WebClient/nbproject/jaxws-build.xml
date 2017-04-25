@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/controller"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WebApplicationWS"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WebApplicationWS"/>
+    <target name="wsimport-client-WebApplicationWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1" destdir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS_1/wsdl/localhost_8080/WebApplication/WebApplicationWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication/WebApplicationWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS_1/wsdl/localhost_8080/WebApplication/WebApplicationWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WebApplicationWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/controller"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WebApplicationWS_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WebApplicationWS, wsimport-client-WebApplicationWS_1"/>
 </project>

@@ -28,8 +28,8 @@
     </target>
     <target name="wsimport-client-WebApplicationWS" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WebApplicationWS"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WebApplicationWS" destdir="${build.generated.dir}/jax-wsCache/WebApplicationWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS/wsdl/osmars-macbook-pro.local_8080/WebApplication/WebApplicationWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://osmars-macbook-pro.local:8080/WebApplication/WebApplicationWS?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS/wsdl/osmars-macbook-pro.local_8080/WebApplication/WebApplicationWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WebApplicationWS" destdir="${build.generated.dir}/jax-wsCache/WebApplicationWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS/wsdl/localhost_8080/WebApplication/WebApplicationWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication/WebApplicationWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WebApplicationWS/wsdl/localhost_8080/WebApplication/WebApplicationWS.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WebApplicationWS"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">

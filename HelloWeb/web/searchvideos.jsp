@@ -5,8 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Añadir un nuevo video
-        <small>Optional description</small>
+        Búsqueda de Vídeos
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -20,62 +19,49 @@
           <div class="col-md-12">
            <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Registro de Vídeos</h3>
+              <h3 class="box-title">Busqueda de Vídeos</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
+
             
             
             <form action="servletSearchTitle" method="post">
               <div class="box-body">
                 <div class="form-group has-feedback">
-                  <label for="exampleInputPassword1">Título</label>
+                  <label for="exampleInputPassword1">Buscar por Título</label>
                   <input type="text" name="title" class="form-control" placeholder="Título" required="required">
                 </div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
+               <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>    
             </form>
-            
+            <br>
             
             
             
             <form action="servletSearchAuthor" method="post">
               <div class="box-body">
                 <div class="form-group has-feedback">
-                  <label for="exampleInputPassword1">Autor</label>
+                  <label for="exampleInputPassword1">Buscar por Autor</label>
                   <input type="text" name="author" class="form-control" placeholder="Autor" required="required">
-                </div>                  
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
               </div>
             </form>
+            <br>
             
             
-            
-            
-            
+                     
             <form action="servletSearchDate" method="post">
               <div class="box-body">                
                 <div class="form-group has-feedback">
-                  <label for="exampleInputPassword1">Fecha de Creación</label>
+                  <label for="exampleInputPassword1">Buscar por Fecha de Creación</label>
                   <input type="date" name="creationdate" class="form-control" placeholder="Fecha de Creación" required="required">
                 </div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Buscar</button>
               </div>
             </form>
+            <br>
             
-            
+           
           </div>
 
           </div>

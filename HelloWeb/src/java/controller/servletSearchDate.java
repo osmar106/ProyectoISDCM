@@ -22,8 +22,9 @@ import javax.xml.ws.WebServiceRef;
 @WebServlet(name = "servletSearchDate", urlPatterns = {"/servletSearchDate"})
 public class servletSearchDate extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/osmars-macbook-pro.local_8080/WebApplication/WebApplicationWS.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WebApplication/WebApplicationWS.wsdl")
     private WebApplicationWS_Service service;
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,25 +37,12 @@ public class servletSearchDate extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        //response.setContentType("text/html;charset=UTF-8");
             
             List<Video> result = this.getByDate(request.getParameter("creationdate"));
-        
-            for (Video video: result) {
-                System.out.println(video.title + video.author + video.date + video.duration + video.reproductions + video.description + video.format);
-            }
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet servletSearchDate</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet servletSearchDate at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+
+        request.setAttribute("list", result);
+        request.getRequestDispatcher("/viewSearchVideos.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -102,5 +90,7 @@ public class servletSearchDate extends HttpServlet {
         controller.WebApplicationWS port = service.getWebApplicationWSPort();
         return port.getByDate(date);
     }
+
+
 
 }

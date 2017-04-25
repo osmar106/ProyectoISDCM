@@ -1,17 +1,17 @@
-<%@page import="model.video"%>
+<%@page import="model.VideoModel"%>
 <%@page language="java" import="java.util.*" %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@include file="header.jsp" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Videos disponibles
-        <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -41,30 +41,18 @@
                           <th>Formato</th>
                         </tr>
                         
-                        <%
-
-                            String user = request.getSession().getAttribute("user").toString();
-                            ResultSet resultSet = video.getVideos(user);
-                            while(resultSet.next()){
-
-                        %>
-                        <tr>
-
-                        <td><%=resultSet.getString("ID") %></td>
-                        <td><%=resultSet.getString("TITULO") %></td>
-                        <td><%=resultSet.getString("AUTOR") %></td>
-                        <td><%=resultSet.getString("FECHA_CREACION") %></td>
-                        <td><%=resultSet.getString("DURACION") %></td>
-                        <td><%=resultSet.getString("REPRODUCCIONES") %></td>
-                        <td><%=resultSet.getString("DESCRIPCION") %></td>
-                        <td><%=resultSet.getString("FORMATO") %></td>
-
-                        </tr>
-
-                        <%
-                        }
-
-                        %>
+                            <c:forEach items="${list}" var="video">
+                                <tr>
+                                    <td><c:out value="${video.id}"/></td>
+                                    <td><c:out value="${video.title}"/></td>
+                                    <td><c:out value="${video.author}"/></td>
+                                    <td><c:out value="${video.date}"/></td>
+                                    <td><c:out value="${video.duration}"/></td>
+                                    <td><c:out value="${video.reproductions}"/></td>
+                                    <td><c:out value="${video.description}"/></td>
+                                    <td><c:out value="${video.format}"/></td>
+                                </tr>
+                            </c:forEach>
 
                       </table>
                     </div>

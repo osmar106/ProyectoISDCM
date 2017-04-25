@@ -11,7 +11,6 @@
     <section class="content-header">
       <h1>
         Videos disponibles
-        <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
