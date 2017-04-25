@@ -260,6 +260,7 @@ desired effect
         <li><a href="servletHome"><i class="fa fa-link"></i> <span>Home</span></a></li>
         <li><a href="viewVideos.jsp"><i class="fa fa-link"></i> <span>Ver videos</span></a></li>
         <li><a href="addvideos.jsp"><i class="fa fa-link"></i> <span>Agregar videos</span></a></li>
+        <li><a href="searchvideos.jsp"><i class="fa fa-link"></i> <span>Buscar videos</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

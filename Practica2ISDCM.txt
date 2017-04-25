@@ -16,7 +16,7 @@ http://www.c-sharpcorner.com/UploadFile/fd0172/how-to-fetch-records-from-databas
 
 
 
-INSERT INTO VIDEOS (TITULO, AUTOR, FECHA_CREACION, DURACION, REPRODUCCIONES, DESCRIPCION, FORMATO) VALUES('Video','Video',DATE('2009-01-01'),TIME('05:54:38'),INT('1'),'Video','mov')
+INSERT INTO VIDEOS (TITULO, AUTOR, FECHA_CREACION, DURACION, REPRODUCCIONES, DESCRIPCION, FORMATO, USERID) VALUES('Video','Video',DATE('2009-01-01'),TIME('05:54:38'),INT('1'),'Video','mov’,’vgabante’)
 
 
 
