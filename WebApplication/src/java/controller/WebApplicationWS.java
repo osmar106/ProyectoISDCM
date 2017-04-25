@@ -140,7 +140,7 @@ public class WebApplicationWS {
             connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
             statement=connection.createStatement();
             //String sql ="SELECT * FROM VIDEOS";
-            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE FECHA_CREACION=DATE(''{0}'')", date);
+            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE YEAR(FECHA_CREACION)=INT(''{0}'')", date);
 
             resultSet = statement.executeQuery(sqlStatement);
             

@@ -53,8 +53,8 @@
             <form action="servletSearchDate" method="post">
               <div class="box-body">                
                 <div class="form-group has-feedback">
-                  <label for="exampleInputPassword1">Buscar por Fecha de Creación</label>
-                  <input type="date" name="creationdate" class="form-control" placeholder="Fecha de Creación" required="required">
+                  <label for="exampleInputPassword1">Buscar por Año de Creación</label> 
+                  <input type="text" name="creationdate" class="form-control" placeholder="Año de Creación (YYYY)" required="required" pattern="^[0-9][0-9][0-9][0-9]$">
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
               </div>
@@ -70,6 +70,6 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /.content-wrapper /(?<!\d)(?!0000)\d{4}(?!\d)/g -->
 
   <%@include file="footer.jsp" %>
