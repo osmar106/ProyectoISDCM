@@ -1,14 +1,14 @@
-Wed Apr 05 22:34:03 CEST 2017 : Servidor de red Apache Derby: Se ha iniciado 10.11.1.2 - (1629631) y está listo para aceptar las conexiones en el puerto 1527
+Fri Apr 21 19:13:10 CEST 2017 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Wed Apr 05 22:34:03 CEST 2017:
- Iniciando instancia a816c00e-015b-3fd2-fb87-ffff92f02f6b de Derby, versión The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): 
-en el directorio de base de datos C:\Users\Victoria\Documents\Master\ISDCM Victoria\Proyecto-ISDCM\DBUsuarios con el cargador de clases sun.misc.Launcher$AppClassLoader@6f94fa3e
-Cargado desde file:/C:/Program%20Files/Java/jdk1.8.0_121/db/lib/derby.jar
+Fri Apr 21 19:13:10 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-015b-9180-cfb6-ffffe696425d 
+on database directory /Users/Osmar/Documents/ProyectoISDCM/DBUsuarios with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_121-b13
-user.dir=C:\Program Files\Java\jdk1.8.0_121\db
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=C:\Users\Victoria\Documents\Master\ISDCM Victoria\Proyecto-ISDCM
-Cargador de clases de base de datos iniciado - derby.database.classpath=''
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.4
+derby.system.home=/Users/Osmar/Documents/ProyectoISDCM
+Database Class Loader started - derby.database.classpath=''
