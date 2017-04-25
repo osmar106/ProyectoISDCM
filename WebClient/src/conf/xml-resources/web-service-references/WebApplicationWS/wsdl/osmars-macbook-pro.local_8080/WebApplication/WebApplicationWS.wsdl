@@ -4,31 +4,41 @@
 <xsd:import namespace="http://controller/" schemaLocation="http://osmars-macbook-pro.local:8080/WebApplication/WebApplicationWS?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="search">
-<part name="parameters" element="tns:search"/>
+<message name="getByTitle">
+<part name="parameters" element="tns:getByTitle"/>
 </message>
-<message name="searchResponse">
-<part name="parameters" element="tns:searchResponse"/>
+<message name="getByTitleResponse">
+<part name="parameters" element="tns:getByTitleResponse"/>
 </message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
+<message name="getByDate">
+<part name="parameters" element="tns:getByDate"/>
 </message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
+<message name="getByDateResponse">
+<part name="parameters" element="tns:getByDateResponse"/>
+</message>
+<message name="getByAuthor">
+<part name="parameters" element="tns:getByAuthor"/>
+</message>
+<message name="getByAuthorResponse">
+<part name="parameters" element="tns:getByAuthorResponse"/>
 </message>
 <portType name="WebApplicationWS">
-<operation name="search">
-<input wsam:Action="http://controller/WebApplicationWS/searchRequest" message="tns:search"/>
-<output wsam:Action="http://controller/WebApplicationWS/searchResponse" message="tns:searchResponse"/>
+<operation name="getByTitle">
+<input wsam:Action="http://controller/WebApplicationWS/getByTitleRequest" message="tns:getByTitle"/>
+<output wsam:Action="http://controller/WebApplicationWS/getByTitleResponse" message="tns:getByTitleResponse"/>
 </operation>
-<operation name="hello">
-<input wsam:Action="http://controller/WebApplicationWS/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://controller/WebApplicationWS/helloResponse" message="tns:helloResponse"/>
+<operation name="getByDate">
+<input wsam:Action="http://controller/WebApplicationWS/getByDateRequest" message="tns:getByDate"/>
+<output wsam:Action="http://controller/WebApplicationWS/getByDateResponse" message="tns:getByDateResponse"/>
+</operation>
+<operation name="getByAuthor">
+<input wsam:Action="http://controller/WebApplicationWS/getByAuthorRequest" message="tns:getByAuthor"/>
+<output wsam:Action="http://controller/WebApplicationWS/getByAuthorResponse" message="tns:getByAuthorResponse"/>
 </operation>
 </portType>
 <binding name="WebApplicationWSPortBinding" type="tns:WebApplicationWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="search">
+<operation name="getByTitle">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +47,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
+<operation name="getByDate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getByAuthor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
