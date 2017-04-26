@@ -255,13 +255,13 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
+        <li class="header">MENÚ</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="servletHome"><i class="fa fa-link"></i> <span>Home</span></a></li>
         <li><a href="viewVideos.jsp"><i class="fa fa-link"></i> <span>Ver videos</span></a></li>
         <li><a href="addvideos.jsp"><i class="fa fa-link"></i> <span>Agregar videos</span></a></li>
         <li><a href="searchvideos.jsp"><i class="fa fa-link"></i> <span>Buscar videos</span></a></li>
-        <li class="treeview">
+<!--        <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -271,7 +271,7 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
       <!-- /.sidebar-menu -->
     </section>
