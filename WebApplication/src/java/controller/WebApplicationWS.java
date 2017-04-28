@@ -45,7 +45,7 @@ public class WebApplicationWS {
             connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
             statement=connection.createStatement();
             //String sql ="SELECT * FROM VIDEOS";
-            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE TITULO=''{0}''", title);
+            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE LOWER(TITULO) LIKE LOWER(''{0}%'')", title);
 
             resultSet = statement.executeQuery(sqlStatement);
             
@@ -92,7 +92,7 @@ public class WebApplicationWS {
             connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
             statement=connection.createStatement();
             //String sql ="SELECT * FROM VIDEOS";
-            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE AUTOR=''{0}''", author);
+            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE LOWER(AUTOR) LIKE LOWER(''{0}%'')", author);
 
             resultSet = statement.executeQuery(sqlStatement);
             
@@ -140,7 +140,7 @@ public class WebApplicationWS {
             connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
             statement=connection.createStatement();
             //String sql ="SELECT * FROM VIDEOS";
-            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE YEAR(FECHA_CREACION)=INT(''{0}'')", date);
+            String sqlStatement = MessageFormat.format("SELECT * FROM ISDCM.VIDEOS WHERE LOWER(FECHA_CREACION) LIKE LOWER(''{0}%'')", date);
 
             resultSet = statement.executeQuery(sqlStatement);
             
