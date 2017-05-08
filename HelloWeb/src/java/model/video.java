@@ -51,12 +51,6 @@ public class video {
        String userId = "isdcm";
        String password = "1234";
 
-    //try {
-    //Class.forName(driverName);
-    //} catch (ClassNotFoundException e) {
-    //e.printStackTrace();
-    //}
-
        Connection connection = null;
        Statement statement = null;
        ResultSet resultSet = null;
@@ -75,4 +69,32 @@ public class video {
            e.printStackTrace();
        }return resultSet;
     }
+   
+   public static void incrementVideos(String id) throws SQLException{
+       //String driverName = "com.mysql.jdbc.Driver";
+       String connectionUrl = "jdbc:derby://localhost:1527/";
+       String dbName = "DBUsuarios";
+       String userId = "isdcm";
+       String password = "1234";
+
+
+       Connection connection = null;
+       Statement statement = null;
+       ResultSet resultSet = null;
+
+       try{
+           connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+           statement=connection.createStatement();
+           //String sql ="SELECT * FROM VIDEOS";
+           String sqlStatement = MessageFormat.format("UPDATE ISDCM.VIDEOS SET REPRODUCCIONES = REPRODUCCIONES + 1 WHERE ID = ''{0}''", id);
+
+           resultSet = statement.executeQuery(sqlStatement);
+
+
+
+       }catch (Exception e) {
+           e.printStackTrace();
+       }
+    }  
+   
 }
