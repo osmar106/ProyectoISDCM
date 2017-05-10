@@ -57,7 +57,11 @@
                 <div class="form-group has-feedback">
                   <label for="exampleInputPassword1">Formato</label>
                   <input type="text" name="format" class="form-control" placeholder="Formato" required="required">
-                </div>                  
+                </div>
+                <div class="form-group has-feedback">
+                  <label for="exampleInputPassword1">URL</label>
+                  <input type="url" name="url" class="form-control" placeholder="URL" required="required">
+                </div> 
               </div>
               <!-- /.box-body -->
 

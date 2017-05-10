@@ -38,6 +38,7 @@
                           <th>Reproducciones</th>
                           <th>Descripción</th>
                           <th>Formato</th>
+                          <th>Visualizar</th>
                         </tr>
                         
                         <%
@@ -45,6 +46,7 @@
                             String user = request.getSession().getAttribute("user").toString();
                             ResultSet resultSet = video.getVideos(user);
                             while(resultSet.next()){
+                                String url = "playVideos.jsp?url=" + resultSet.getString("URL");
 
                         %>
                         <tr>
@@ -57,6 +59,7 @@
                         <td><%=resultSet.getString("REPRODUCCIONES") %></td>
                         <td><%=resultSet.getString("DESCRIPCION") %></td>
                         <td><%=resultSet.getString("FORMATO") %></td>
+                        <td><a href="<%=url%>" class="btn btn-info" role="button">Ver</a></td>
 
                         </tr>
 

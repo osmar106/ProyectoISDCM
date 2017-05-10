@@ -23,6 +23,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="css/skins/skin-blue.min.css">
+  
+  <link type="text/css" href="css/jplayer.pink.flag.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -261,6 +266,7 @@ desired effect
         <li><a href="viewVideos.jsp"><i class="fa fa-link"></i> <span>Ver videos</span></a></li>
         <li><a href="addvideos.jsp"><i class="fa fa-link"></i> <span>Agregar videos</span></a></li>
         <li><a href="searchvideos.jsp"><i class="fa fa-link"></i> <span>Buscar videos</span></a></li>
+        <li><a href="playVideos.jsp"><i class="fa fa-link"></i> <span>Reproducir videos</span></a></li>
 <!--        <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
