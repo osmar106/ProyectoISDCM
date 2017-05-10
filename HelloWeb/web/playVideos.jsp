@@ -7,14 +7,28 @@
 <%@include file="header.jsp" %>
 
   <script type="text/javascript">
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    
+    var url = getParameterByName('url');
+    var title = getParameterByName('title');
+    
     $(document).ready(function(){
+        
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
-            title: "Big Buck Bunny Trailer",
-            m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
-            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
-            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+            //title: title,
+            m4v: url,
+            ogv: url,
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
           });
         },
         cssSelectorAncestor: "#jp_container_1",
@@ -32,7 +46,7 @@
         remainingDuration: true,
         toggleDuration: true
       });
-    });
+    }); 
   </script>
 
   <!-- Content Wrapper. Contains page content -->

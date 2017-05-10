@@ -60,7 +60,8 @@ public class WebApplicationWS {
                         resultSet.getString("DURACION"),
                         resultSet.getInt("REPRODUCCIONES"),
                         resultSet.getString("DESCRIPCION"),
-                        resultSet.getString("FORMATO"));
+                        resultSet.getString("FORMATO"),
+                        resultSet.getString("URL"));
                  
                 list.add(video);
             }
@@ -107,7 +108,8 @@ public class WebApplicationWS {
                         resultSet.getString("DURACION"),
                         resultSet.getInt("REPRODUCCIONES"),
                         resultSet.getString("DESCRIPCION"),
-                        resultSet.getString("FORMATO"));
+                        resultSet.getString("FORMATO"),
+                        resultSet.getString("URL"));
                  
                 list.add(video);
             }
@@ -155,7 +157,8 @@ public class WebApplicationWS {
                         resultSet.getString("DURACION"),
                         resultSet.getInt("REPRODUCCIONES"),
                         resultSet.getString("DESCRIPCION"),
-                        resultSet.getString("FORMATO"));
+                        resultSet.getString("FORMATO"),
+                        resultSet.getString("URL"));                        
                  
                 list.add(video);
             }

@@ -19,7 +19,17 @@ public class Video {
     private String description;
     private String format;
     private int id;
+    private String url;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+    
+    
     /**
      * Get the value of id
      *
@@ -171,7 +181,7 @@ public class Video {
         this.title = title;
     }
 
-    public void setVideo(int id, String title, String author, String date, String duration, int reproductions, String description, String format){
+    public void setVideo(int id, String title, String author, String date, String duration, int reproductions, String description, String format, String url){
         this.setId(id);
         this.setTitle(title);
         this.setAuthor(author);
@@ -179,7 +189,8 @@ public class Video {
         this.setDuration(duration);
         this.setReproductions(reproductions);
         this.setDescription(description);
-        this.setFormat(format);    
+        this.setFormat(format);
+        this.setUrl(url);
     }
     
     
