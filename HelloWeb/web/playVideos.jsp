@@ -26,8 +26,11 @@
         ready: function () {
           $(this).jPlayer("setMedia", {
             //title: title,
+            mp4: url,
             m4v: url,
             ogv: url,
+            webm: url,
+            webmv: url,
             //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
           });
         },
