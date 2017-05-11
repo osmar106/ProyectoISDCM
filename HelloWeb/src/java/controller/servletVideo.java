@@ -40,11 +40,12 @@ public class servletVideo extends HttpServlet {
     String reproductions =request.getParameter("reproductions");
     String description =request.getParameter("description");
     String format =request.getParameter("format");
+    String url =request.getParameter("url");
         HttpSession session = request.getSession();
         String user = session.getAttribute("user").toString();
         System.out.println("Usuario: " + user );
 
-    String[] strArray = new String[]{title, author, creationdate, duration, reproductions, description, format};
+    String[] strArray = new String[]{title, author, creationdate, duration, reproductions, description, format, url};
     video.insert(strArray, user); 
     
     request.getRequestDispatcher("/viewVideos.jsp").forward(request, response);

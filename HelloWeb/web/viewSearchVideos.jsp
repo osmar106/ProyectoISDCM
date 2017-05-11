@@ -1,4 +1,5 @@
 <%@page import="model.VideoModel"%>
+<%@page import="model.video"%>
 <%@page language="java" import="java.util.*" %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
@@ -7,11 +8,38 @@
 <%@include file="header.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <!-- Content Wrapper. Contains page content -->
+  
+  
+  <script>
+    $(document).ready(function(){
+      $(".btn-info").click(function(e) {
+        var id = $(this).attr('data-id');
+        var url = $(this).attr('data-url');
+        var title = $(this).attr('data-titulo');
+        e.preventDefault();
+        $.ajax({
+                type: "POST",
+                url: "webresources/generic/postInfo",
+                contentType: "application/x-www-form-urlencoded",
+                data: $.param({id: id}),
+                success: function(result) {
+                    //alert('ok');
+                    window.location.href = '/playVideos.jsp?url=' + url;
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+        });    
+    });
+  </script>
+  
+  
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Videos disponibles
+        Búsqueda de videos disponibles
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -39,8 +67,9 @@
                           <th>Reproducciones</th>
                           <th>Descripción</th>
                           <th>Formato</th>
+                          <th>Visualización</th>
                         </tr>
-                        
+
                             <c:forEach items="${list}" var="video">
                                 <tr>
                                     <td><c:out value="${video.id}"/></td>
@@ -51,9 +80,12 @@
                                     <td><c:out value="${video.reproductions}"/></td>
                                     <td><c:out value="${video.description}"/></td>
                                     <td><c:out value="${video.format}"/></td>
-                                </tr>
+                                    <td align="center">
+                                        <a class="btn btn-info" id="button1" role="button" data-titulo="${video.title}" data-url="${video.url}" data-id="${video.id}">Ver</a>
+                                    </td> 
+                                </tr>    
                             </c:forEach>
-
+                                
                       </table>
                     </div>
                 </div>

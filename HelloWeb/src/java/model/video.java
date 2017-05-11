@@ -28,8 +28,8 @@ public class video {
        try{
            System.out.println("Argument: " + Arrays.toString(args));
            
-           String sqlStatement = MessageFormat.format("INSERT INTO VIDEOS (TITULO, AUTOR, FECHA_CREACION, DURACION, REPRODUCCIONES, DESCRIPCION, FORMATO, USERID) VALUES(''{0}'',''{1}'',DATE(''{2}''),TIME(''{3}''),INT(''{4}''),''{5}'',''{6}'',''{7}'')", 
-                                                args[0], args[1], args[2], args[3], args[4], args[5], args[6], user);
+           String sqlStatement = MessageFormat.format("INSERT INTO VIDEOS (TITULO, AUTOR, FECHA_CREACION, DURACION, REPRODUCCIONES, DESCRIPCION, FORMATO, USERID, URL) VALUES(''{0}'',''{1}'',DATE(''{2}''),TIME(''{3}''),INT(''{4}''),''{5}'',''{6}'',''{7}'',''{8}'')", 
+                                                args[0], args[1], args[2], args[3], args[4], args[5], args[6], user, args[7]);
            
            
            System.out.println("SQL statement: " + sqlStatement);
@@ -51,12 +51,6 @@ public class video {
        String userId = "isdcm";
        String password = "1234";
 
-    //try {
-    //Class.forName(driverName);
-    //} catch (ClassNotFoundException e) {
-    //e.printStackTrace();
-    //}
-
        Connection connection = null;
        Statement statement = null;
        ResultSet resultSet = null;
@@ -75,4 +69,32 @@ public class video {
            e.printStackTrace();
        }return resultSet;
     }
+   
+   public static void incrementVideos(String id) throws SQLException{
+       //String driverName = "com.mysql.jdbc.Driver";
+       String connectionUrl = "jdbc:derby://localhost:1527/";
+       String dbName = "DBUsuarios";
+       String userId = "isdcm";
+       String password = "1234";
+
+
+       Connection connection = null;
+       Statement statement = null;
+       ResultSet resultSet = null;
+
+       try{
+           connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+           statement=connection.createStatement();
+           //String sql ="SELECT * FROM VIDEOS";
+           String sqlStatement = MessageFormat.format("UPDATE ISDCM.VIDEOS SET REPRODUCCIONES = REPRODUCCIONES + 1 WHERE ID = ''{0}''", id);
+
+           resultSet = statement.executeQuery(sqlStatement);
+
+
+
+       }catch (Exception e) {
+           e.printStackTrace();
+       }
+    }  
+   
 }
