@@ -80,8 +80,8 @@
                             <td><%=resultSet.getString("REPRODUCCIONES") %></td>
                             <td><%=resultSet.getString("DESCRIPCION") %></td>
                             <td><%=resultSet.getString("FORMATO") %></td>
-                            <td>
-                                <a class="btn btn-info" id="button1" role="button" data-titulo="<%=resultSet.getString("TITULO" ) %>" data-url="<%=resultSet.getString("URL" ) %>" data-id="<%=resultSet.getString("ID" ) %>">Ver</a>
+                            <td align="center">
+                                <a class="btn btn-info" id="button1" role="button" data-titulo="<%=resultSet.getString("TITULO" ) %>" data-url="<%=resultSet.getString("URL" ) %>" data-id="<%=resultSet.getString("ID" )%>">Ver</a>
                             </td>
 
                         </tr>

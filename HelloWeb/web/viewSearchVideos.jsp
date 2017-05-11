@@ -39,7 +39,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Videos disponibles
+        Búsqueda de videos disponibles
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -80,7 +80,7 @@
                                     <td><c:out value="${video.reproductions}"/></td>
                                     <td><c:out value="${video.description}"/></td>
                                     <td><c:out value="${video.format}"/></td>
-                                    <td>
+                                    <td align="center">
                                         <a class="btn btn-info" id="button1" role="button" data-titulo="${video.title}" data-url="${video.url}" data-id="${video.id}">Ver</a>
                                     </td> 
                                 </tr>    

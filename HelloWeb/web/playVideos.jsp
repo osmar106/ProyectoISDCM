@@ -36,7 +36,7 @@
         },
         cssSelectorAncestor: "#jp_container_1",
         swfPath: "js",
-        supplied: "m4v, ogv",
+        supplied: "m4v, ogv, webm, webmv, mp4",
         size: {
             width: "640px",
             height: "360px",
